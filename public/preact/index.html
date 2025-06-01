@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preact Embedded Widget</title>
+  <link rel="stylesheet" href="/stylesheet.css">
+</head>
+<body>
+<nav class="top-nav">
+  <a href="/" class="top-nav__link">Vue 2 version</a>
+  <a href="/vue3" class="top-nav__link">Vue 3 version</a>
+  <a href="/preact" class="top-nav__link top-nav__link--active">Preact version</a>
+</nav>
+<div class="container">
+  <div id="app">
+  </div>
+  <script src="/vue3/components/Counter.js"></script>
+
+  <script type="module">
+    import { h, render, Fragment } from 'https://esm.sh/preact@10.19.2';
+    import { Counter } from "./components/Counter.js"
+
+    const message = 'Hello from parent in Preact!'
+
+    render(h(Fragment, null, [
+      h('h1', null, message),
+      h(Counter),
+    ]), document.getElementById('app'));
+  </script>
+</div>
+</body>
+</html>

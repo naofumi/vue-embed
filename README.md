@@ -7,6 +7,7 @@ that it is challenging to understand what was so original about Vue and why it b
 I think going back to the origins is the best way to understand this.
 
 Vue was originally marketed as a better jQuery and emphasized embedding Vue inside your MPA application.
+
 We should try this out.
 
 ## Notes
@@ -16,6 +17,12 @@ We should try this out.
 We use Vue 2 and Vue 3. 
 Vue 2 makes it slightly easier to use embeddings, 
 and so this is a reminder of how it was when Vue was originally considered to be much easier than React.
+
+### Preact version
+
+I’ve also included a Preact version for comparison.
+
+The `h()` function is good, but is nowhere near as convenient as the template system that Vue provides.
 
 ### The template
 
