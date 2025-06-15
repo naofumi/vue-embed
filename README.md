@@ -1,30 +1,64 @@
 # Vue Embedded
 
-At this point in time,
-Vue has adopted so many features of React
-that it is challenging to understand what was so original about Vue and why it became so popular.
+Today it is hard to distinguish the differences between what React and Vue try to achieve.
+Their scopes seem very similar.
 
-I think going back to the origins is the best way to understand this.
+However, if you look at the Vue2 docs, they tell a very different story.
 
-Vue was originally marketed as a better jQuery and emphasized embedding Vue inside your MPA application.
+The [Vue2 guide](https://v2.vuejs.org/v2/guide/#Getting-Started) starts off with loading Vue from a CDN and creating a Vue component.
+You don't even need a build!
 
-We should try this out.
+I think this even today, this is an interesting approach that is worth a deeper look.
+I believe there are cases where this could be a significantly better approach than an SPA. 
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+  {{ message }}
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+</script>
+```
+
+## Setup
+
+1. Download the repository.
+2. Inside the project root directory, run `npm install`. This installs a static web server called "http-server".
+3. Run `npm run server` and access the site at http://127.0.0.1:8080.
 
 ## Notes
 
+This site consists of three applications built using Vue2, Vue3, and Preact respectively.
+
+All of these applications embed components in static HTML.
+
 ### Vue versions
 
-We use Vue 2 and Vue 3. 
-Vue 2 makes it slightly easier to use embeddings, 
-and so this is a reminder of how it was when Vue was originally considered to be much easier than React.
+Vue2 makes it slightly easier to use embeddings
+and is a reminder of how it was when Vue was originally considered to be more approachable than React.
+
+One big feature is that Vue uses the static HTML as the template for the Vue component.
+This is very different from React where you use a JSX template that is completely independent of the static HTML.
+
+Vue3 makes embedding a bit harder, but the benefit of using the HTML as a template is still present.
 
 ### Preact version
 
 I’ve also included a Preact version for comparison.
+Preact is often considered a good alternative to React for embedding, especially if you want to avoid builds.
 
-The `h()` function is good, but is nowhere near as convenient as the template system that Vue provides.
+Preact provides the `h()` function instead of JSX.
+It is good, but is nowhere near as convenient as the way Vue uses the static HTML already on the page.
 
-### The template
+### V-cloak
 
 The really cool thing is that Vue can use the HTML already on the page as the template for the client rendered DOM.
 You don't have to rewrite your HTML into something like JSX.

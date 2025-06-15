@@ -18,7 +18,7 @@
     <h1>{{ message }}</h1>
     <counter-button></counter-button>
   </div>
-  <script src="/vue3/components/Counter.js"></script>
+  <script src="/vue3/components/CounterButton.js"></script>
 
   <script>
     const {createApp} = Vue;
@@ -27,14 +27,13 @@
     const app = createApp({
       components: { CounterButton },
       data() {
-        return {message: 'Hello from parent in Vue 3!'};
+        return {message: 'Hello from Vue 3!'};
       }
     });
 
     // Register the component.
     // Note that Vue3 will register the component within the DOM hierarchy of `app` only.
     // It will not apply globally.
-    // app.component('counter-button', CounterButton);
 
     // Mount the app
     app.mount('#app');

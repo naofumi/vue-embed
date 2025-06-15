@@ -14,17 +14,15 @@
 <div class="container">
   <div id="app">
   </div>
-  <script src="/vue3/components/Counter.js"></script>
-
   <script type="module">
     import { h, render, Fragment } from 'https://esm.sh/preact@10.19.2';
-    import { Counter } from "./components/Counter.js"
+    import { CounterButton } from "./components/CounterButton.js"
 
-    const message = 'Hello from parent in Preact!'
+    const message = 'Hello from Preact!'
 
     render(h(Fragment, null, [
       h('h1', null, message),
-      h(Counter),
+      h(CounterButton),
     ]), document.getElementById('app'));
   </script>
 </div>
