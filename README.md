@@ -8,8 +8,8 @@ However, if you look at the Vue2 docs, they tell a very different story.
 The [Vue2 guide](https://v2.vuejs.org/v2/guide/#Getting-Started) starts off with loading Vue from a CDN and creating a Vue component.
 You don't even need a build!
 
-I think this even today, this is an interesting approach that is worth a deeper look.
-I believe there are cases where this could be a significantly better approach than an SPA. 
+I think that even today, this is an interesting approach that is worth a deeper look.
+There are cases where this could be a significantly better approach than an SPA. 
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -55,6 +55,12 @@ One big feature is that Vue uses the static HTML as the template for the Vue com
 This is very different from React where you use a JSX template that is completely independent of the static HTML.
 
 Vue3 makes embedding a bit harder, but the benefit of using the HTML as a template is still present.
+
+Note that due to the `v-cloak` attribute on the mount point `<div>`, you can reload the page without any flicker,
+even after emptying the cache.
+On the other hand, the flicker on the Preact version is very noticeable.
+
+[Video](documents/vue-embed.mov)
 
 ### Preact version
 
