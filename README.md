@@ -34,6 +34,12 @@ I believe there are cases where this could be a significantly better approach th
 2. Inside the project root directory, run `npm install`. This installs a static web server called "http-server".
 3. Run `npm run server` and access the site at http://127.0.0.1:8080.
 
+## Demo
+
+This application is deployed on Vercel. Please go and take a look.
+
+[vue-embed.vercel.app](https://vue-embed.vercel.app)
+
 ## Notes
 
 This site consists of three applications built using Vue2, Vue3, and Preact respectively.
